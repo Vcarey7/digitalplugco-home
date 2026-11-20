@@ -1,0 +1,325 @@
+/* Digital Plug Co. — company homepage. Static styles. No build step. */
+
+:root {
+  --bg: #f4efe6;
+  --bg-alt: #e8efe9;
+  --ink: #12201b;
+  --muted: #5a645c;
+  --pine: #14332b;
+  --pine-2: #1c473c;
+  --cream: #fffaf2;
+  --line: #d5cec2;
+  --gold: #e8c9a0;
+  --copper: #b56820;
+  --copper-2: #8f4e16;
+  --shadow: 0 16px 40px rgba(20, 51, 43, 0.12);
+  --radius: 14px;
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+a { color: var(--pine-2); }
+a:hover { color: var(--copper-2); }
+
+:focus-visible {
+  outline: 3px solid var(--copper);
+  outline-offset: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -44px;
+  background: var(--cream);
+  color: var(--pine);
+  padding: 8px 12px;
+  z-index: 100;
+  border-radius: 6px;
+}
+.skip:focus { top: 12px; }
+
+.wrap {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--pine);
+  color: #f4efe6;
+  border-bottom: 1px solid rgba(232, 201, 160, 0.25);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f4efe6;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+.brand:hover { color: var(--gold); }
+
+.nav {
+  display: flex;
+  gap: 8px 18px;
+  flex-wrap: wrap;
+}
+.nav a {
+  color: #f4efe6;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.nav a:hover { color: var(--gold); }
+
+.hero {
+  background:
+    radial-gradient(1200px 400px at 10% -10%, rgba(232, 201, 160, 0.18), transparent 50%),
+    linear-gradient(180deg, #102822 0%, var(--pine) 55%, #1a3c33 100%);
+  color: #f4efe6;
+  padding: 88px 0 96px;
+}
+
+.kicker {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5.4vw, 4.1rem);
+  line-height: 1.12;
+  font-weight: 600;
+  margin: 0 0 22px;
+  max-width: 16ch;
+}
+
+.lede {
+  font-size: 1.15rem;
+  max-width: 62ch;
+  color: #e8e0d2;
+  margin: 0 0 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--copper);
+  color: #fffaf2;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--copper);
+}
+.btn:hover {
+  background: var(--copper-2);
+  border-color: var(--copper-2);
+  color: #fffaf2;
+}
+.btn-ghost {
+  background: transparent;
+  color: #f4efe6;
+  border-color: var(--gold);
+}
+.btn-ghost:hover {
+  background: rgba(232, 201, 160, 0.12);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.work, .about, .contact {
+  padding: 72px 0;
+}
+
+.work { background: var(--bg); }
+.about { background: var(--bg-alt); }
+.contact { background: var(--cream); }
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin: 0 0 12px;
+}
+
+.section-lead {
+  max-width: 62ch;
+  color: var(--muted);
+  margin: 0 0 36px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 24px 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.card-kicker {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper-2);
+}
+
+.card h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  margin: 0 0 12px;
+}
+
+.card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  flex: 1;
+}
+
+.card-link {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--pine-2);
+}
+.card-link:hover { color: var(--copper-2); }
+.card-link::after { content: " →"; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.about p { margin: 0 0 16px; color: var(--ink); }
+
+.facts {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+}
+.facts h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.facts dl { margin: 0; }
+.facts dl > div {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.facts dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.facts dd { margin: 0; }
+
+.site-footer {
+  background: var(--pine);
+  color: #e8e0d2;
+  padding: 48px 0 28px;
+}
+.site-footer a { color: var(--gold); }
+.site-footer a:hover { color: #fffaf2; }
+
+.foot-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.brand-name {
+  font-weight: 700;
+  color: #f4efe6;
+  margin-bottom: 8px;
+}
+
+.foot-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.copyright {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(232, 201, 160, 0.2);
+  font-size: 0.9rem;
+  color: #c9c2b4;
+}
+
+@media (max-width: 860px) {
+  .cards { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .hero { padding: 64px 0 72px; }
+  .nav { justify-content: flex-end; }
+}
+
+@media (max-width: 520px) {
+  .wrap { width: min(1100px, calc(100% - 28px)); }
+  .header-row { flex-wrap: wrap; padding: 10px 0; }
+  .hero { padding: 48px 0 56px; }
+  .work, .about, .contact { padding: 52px 0; }
+  .brand span { font-size: 0.98rem; }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Digital Plug Co.">
+  <rect width="48" height="48" rx="10" fill="#14332b"/>
+  <rect x="1.25" y="1.25" width="45.5" height="45.5" rx="8.8" fill="none" stroke="#e8c9a0" stroke-width="1.5"/>
+  <!-- simple plug pictogram -->
+  <rect x="18" y="10" width="5" height="9" rx="1.2" fill="#f4efe6"/>
+  <rect x="25" y="10" width="5" height="9" rx="1.2" fill="#f4efe6"/>
+  <path d="M14.5 22c0-2 1.6-3.6 3.6-3.6h11.8c2 0 3.6 1.6 3.6 3.6v9.2c0 5.2-4.4 8.8-9.5 8.8h-.6c-5.1 0-9.5-3.6-9.5-8.8V22z" fill="#f4efe6"/>
+  <path d="M22.2 28.5v5.2c0 1.4.9 2.3 2.2 2.3h0c1.3 0 2.2-.9 2.2-2.3v-5.2" fill="none" stroke="#14332b" stroke-width="1.7" stroke-linecap="round"/>
+</svg>
